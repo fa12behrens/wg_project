@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: T.Behrens
@@ -9,82 +10,62 @@
 class html
 {
 
-	/**
-	 * @var HEREDOC
-	 */
-	public $head = <<<HEREDOC
-<!DOCTYPE html>
-<html>
-<head>
-	<link rel="stylesheet" type="text/css" href="/wg_project/data/library/Bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/javascript" href="/wg_project/data/library/Bootstrap/dist/js/bootstrap.min.js">
-	<link rel="stylesheet" type="text/css" href="/wg_project/data/css/main.css">
+	public function head()
+	{
+		echo "
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/library/Bootstrap/dist/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/css/main.css'>
+	<script src=' ../../../wg_project/data/library/Jquery/jquery.min.js'></script>
+	<script src=' ../../../wg_project/data/library/Jquery_Ui/js/jquery-ui-1.10.3.custom.min.js'></script>
 	<title>WG Manager</title>
-</head>
-<body>
-HEREDOC;
-
-	/**
-	 * @var HEREDOC
-	 */
-	public $foot = <<<HEREDOC
-</body>
-</html>
-HEREDOC;
-
-	/**
-	 * @var HEREDOC
-	 */
-	public $div;
-
-	/**
-	 * @var HEREDOC
-	 */
-	public $div_end = <<<HEREDOC
-</div>
-HEREDOC;
-
-	/**
-	 * @return \HEREDOC
-	 */
-	public function getHead()
-	{
-		return $this->head;
+	</head>
+	<body>
+		";
 	}
 
-	/**
-	 * @return \HEREDOC
-	 */
-	public function getFoot()
+	public function foot()
 	{
-		return $this->foot;
+		echo "
+	</body>
+	</html>
+";
 	}
 
-	/**
-	 * @param HEREDOC
-	 */
-	public function setDiv($class, $id)
+	public function div($class, $id)
 	{
-		$this->div = <<<HEREDOC
-<div class"{$class}" id"{$id}">
-HEREDOC;
+		echo "
+	<div class='$class' id='$id'>
+";
 	}
 
-	/**
-	 * @return \HEREDOC
-	 */
-	public function getDiv()
+	public function div_end()
 	{
-		return $this->div;
+		echo "
+	</div>
+";
 	}
 
-	/**
-	 * @return \HEREDOC
-	 */
-	public function getDivEnd()
+	public function button($class, $id, $name)
 	{
-		return $this->div_end;
+		echo "
+	<button class='$class' id='$id'>$name</button>
+";
 	}
 
+	public function span($class, $id, $text)
+	{
+		echo "
+	<span class='$class' id='$id'>$text</span>
+";
+	}
+
+	public function text($text){
+		echo"
+		$text
+		";
+	}
 
 }

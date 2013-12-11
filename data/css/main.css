@@ -1,0 +1,29 @@
+.btn{
+	position: relative;
+}
+.container{
+	position: relative;
+}
+.item {
+	display: block;
+	width:80px;
+	height: 80px;
+	background: greenyellow;
+	margin: 5px
+}
+.dropzone {
+	width: 110px;
+	min-height: 110px;
+	height: auto;
+	background: honeydew;
+	border: 2px ridge grey
+}
+.dropzone .item {float: left}
+.dropzonen {
+	width: 110px;
+	min-height: 110px;
+	height: auto;
+	background: hotpink;
+	border: 2px ridge grey
+}
+.dropzonen .item {float: left}
