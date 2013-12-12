@@ -44,7 +44,7 @@ $('$drop_first').droppable({
     accept: '$drag',
     drop: function(event, ui ) {
        $(event.target).append(ui.draggable);
-       alert($(ui.draggable).attr('id'));
+    //  alert($(ui.draggable).attr('id'));
     }
 });
 
@@ -52,7 +52,7 @@ $('$drop_second').droppable({
     accept: '$drag',
     drop: function(event, ui ) {
        $(event.target).append(ui.draggable);
-       alert($(ui.draggable).attr('id'));
+    //   alert($(ui.draggable).attr('id'));
     }
 });
 
@@ -63,6 +63,17 @@ $( '$drag' ).draggable({
 });
 });
 </script>
+		";
+	}
+
+	public function scrollpane(){
+		echo"
+		<script>
+			$(function()
+			{
+			$('.scroll').jScrollPane({showArrows: true});
+			});
+		</script>
 		";
 	}
 } 
