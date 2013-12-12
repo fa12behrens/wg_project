@@ -66,13 +66,35 @@ $( '$drag' ).draggable({
 		";
 	}
 
-	public function scrollpane(){
+	public function scrollpane($scroll){
 		echo"
 		<script>
+			$(document).ready(function(){
 			$(function()
 			{
-			$('.scroll').jScrollPane({showArrows: true});
+			$('$scroll').jScrollPane({showArrows: true});
 			});
+			});
+		</script>
+		";
+	}
+
+	public function accordion($select){
+		echo"
+		<script>
+		$(document).ready(function(){
+		$( '$select' ).accordion();
+		});
+		</script>
+		";
+	}
+
+	public function tab($select){
+		echo"
+		<script>
+		$(document).ready(function(){
+		$( '$select' ).tabs();
+		});
 		</script>
 		";
 	}

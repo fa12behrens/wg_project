@@ -10,19 +10,22 @@
 class html
 {
 
-	public function head()
+	public function head($title)
 	{
 		echo "
 		<!DOCTYPE html>
 		<html>
 		<head>
+		<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/library/Jquery_Ui/css/dot-luv/jquery-ui-1.10.3.custom.css'>
 		<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/library/Bootstrap/dist/css/bootstrap.min.css'>
 		<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/library/Jscrollpane/jquery.jscrollpane.css'>
 		<link rel='stylesheet' type='text / css' href=' ../../../wg_project/data/css/main.css'>
+		<script src=' ../../../wg_project/data/library/Jquery_Ui/js/jquery-1.9.1.js'></script>
 		<script src=' ../../../wg_project/data/library/Jquery/jquery.min.js'></script>
 		<script src=' ../../../wg_project/data/library/Jscrollpane/jquery.jscrollpane.min.js'></script>
 		<script src=' ../../../wg_project/data/library/Jquery_Ui/js/jquery-ui-1.10.3.custom.min.js'></script>
-		<title>WG Manager</title>
+		<script src=' ../../../wg_project/data/library/Jquery_Ui/js/jquery-ui-1.10.3.custom.js'></script>
+		<title>$title</title>
 		</head>
 		<body>
 		";
@@ -50,10 +53,10 @@ class html
 		";
 	}
 
-	public function button($class, $id, $name)
+	public function button($class, $id, $type, $name)
 	{
 		echo "
-		<button class='$class' id='$id'>$name</button>
+		<button class='$class' id='$id' type='$type'>$name</button>
 		";
 	}
 
@@ -102,39 +105,63 @@ class html
 
 	public function form_end()
 	{
+		echo "
 
+		";
 	}
 
-	public function ulist(){
-
+	public function ulist($class, $id){
+		echo "
+		<ul class='$class' id='$id'>
+		";
 	}
 
 	public function ulist_end(){
-
+		echo "
+		</ul>
+		";
 	}
 
-	public function olist(){
-
+	public function olist($class, $id){
+		echo "
+		<ol class='$class' id='$id'>
+		";
 	}
 
 	public function olist_end(){
-
+		echo "
+		</ol>
+		";
 	}
 
-	public function list_element(){
-
+	public function list_element($class, $id){
+		echo "
+		<li class='' id=''>
+		";
 	}
 
 	public function list_element_end(){
-
+		echo "
+		</li>
+		";
 	}
 
-	public function link(){
-
+	public function link($source, $class, $id){
+		echo "
+		<a href='$source' class='$class' id='$id'>
+		";
 	}
 
-	public function input(){
+	public function link_end(){
+		echo "
+		</a>
+		";
+	}
 
+	public function input($class, $id, $type, $name){
+		echo "
+		<input class='$class' id='$id' type='$type' name='$name'>
+		";
 	}
 
 	public function bar($class, $now, $min, $max){
@@ -143,4 +170,23 @@ class html
 		";
 	}
 
+	public function h($number, $text){
+		echo"
+		<h$number>$text</h$number>
+		";
+	}
+
+	public function p($text){
+		echo "
+		<p>
+		$text
+		</p>
+		";
+	}
+
+	public function br(){
+		echo "
+		</br>
+		";
+	}
 }

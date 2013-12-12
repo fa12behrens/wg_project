@@ -16,15 +16,16 @@ class index extends html
 	{
 		$html = new html();
 		$js = new js();
-		$html->head();
+		$html->head('main');
 		$js->click_hide('.btn-danger','.btn-danger');
 		$js->click_animate('.container','.btn');
 		$js->drag_drop('.dropzonen','.dropzone','.item');
-		$js->scrollpane();
+		$js->scrollpane('.scroll');
+		$js->tab('.tab');
 		$html->div('container well', '1');
 		$html->icon('glyphicon glyphicon-check');
-		$html->button('btn btn-danger', '2', 'droggelbecher');
-		$html->button('btn btn-info', '3', 'droggelbecher');
+		$html->button('btn btn-danger', '2', '', 'droggelbecher');
+		$html->button('btn btn-info', '3', '', 'droggelbecher');
 		$html->div_end();
 		$html->div('dropzonen well','4');
 		$html->span('item well well-sm','5','droggel');
@@ -37,8 +38,29 @@ class index extends html
 		$html->div_end();
 		$html->div_end();
 		$html->div('well scroll','','');
-		$html->iframe('frame.php','well','','300px','100%','frame1');
+		$html->iframe('frame.php','well','','500px','100%','frame1');
+		$html->div('tab','tab');
+		$html->ulist('','');
+		$html->list_element('','');
+		$html->link('#fragment-1','','');
+		$html->span('','','1');
+		$html->link_end();
+		$html->list_element_end();
+		$html->list_element('','');
+		$html->link('#fragment-2','','');
+		$html->span('','','2');
+		$html->link_end();
+		$html->list_element_end();
+		$html->ulist_end();
+		$html->div('','fragment-1');
 		$html->div_end();
+		$html->div('','fragment-2');
+		$html->div_end();
+		$html->div_end();
+		$html->div_end();
+		echo"
+
+		";
 		$html->foot();
 	}
 
