@@ -6,11 +6,17 @@
  * Time: 10:36
  */
 
-include('../../backend/source/html.php');
-include('../../backend/source/js.php');
+require_once('../../backend/source/html.php');
+require_once('../../backend/source/js.php');
+require_once('site_builder.php');
 
-class index extends html
+class index extends site_builder
 {
+
+	public function execute(){
+		$display = new site_builder();
+		$display->build('WG Manager');
+	}
 
 	function display()
 	{
@@ -66,5 +72,5 @@ class index extends html
 
 }
 
-$go = new index();
-$go->display();
+$start = new index();
+$start->execute();
