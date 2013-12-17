@@ -21,7 +21,7 @@ class site_builder {
 			$html->div('container','1');
 				$html->div('row','11');
 				$html->div_end();
-				$html->div('row','12');
+				$html->div('row special','12');
 					$head = new header();
 					$head->build();
 				$html->div_end();
@@ -35,7 +35,7 @@ class site_builder {
 				$html->div_end();
 				$html->div('row','15');
 				$html->div_end();
-				$html->div('row','16');
+				$html->div('row special','16');
 					$foot = new footer();
 					$foot->build();
 				$html->div_end();

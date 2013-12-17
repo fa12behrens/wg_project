@@ -98,4 +98,31 @@ $( '$drag' ).draggable({
 		</script>
 		";
 	}
+
+	public function ajax($clicked, $datei, $input, $output){
+		echo"
+		<script type='text/javascript'>
+		$(document).ready(function(){
+		$('$clicked').click(function(){
+		var name = encodeURI($('$input').val());
+		if(name == ''){
+		//alert('Bitte einen Namen angeben!');
+		}else{
+		//alert(name);
+		$.ajax({
+		type: 'POST',
+		async: true,
+		url: '../part/$datei.php',
+		data: 'name='+name,
+		success: function(data){
+		var json = $.parseJSON(data);
+		$('$output').html(json.hello+'<br />your ip: '+json.ip);
+		}
+		});
+		}
+		});
+		});
+		</script>
+		";
+	}
 } 

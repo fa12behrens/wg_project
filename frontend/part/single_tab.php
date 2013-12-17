@@ -8,6 +8,7 @@
 
 require_once('../../backend/source/html.php');
 require_once('../../backend/source/js.php');
+require_once('../part/ajax.php');
 
 class single_tab {
 
@@ -33,6 +34,8 @@ class single_tab {
 				$html->text("$tab");
 				$html->div_end();
 			}
+		$ajax = new ajax();
+		$ajax->handle();
 		$html->div_end();
 	}
 
