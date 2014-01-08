@@ -8,7 +8,7 @@
 
 class xml {
 
-	public function load(){
-
+	public function load($file){
+		simplexml_load_file("../../data/xml/$file");
 	}
 } 

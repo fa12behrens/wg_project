@@ -11,14 +11,19 @@ class database
 
 	public function query($query)
 	{
-		$link = mysql_connect('mysql_host', 'mysql_user', 'mysql_password');
+		$mysql_host = 0;
+		$mysql_user = 0;
+		$mysql_password = 0;
+		$mysql_dbname = 0;
 
-		if (!$link = mysql_connect('mysql_host', 'mysql_user', 'mysql_password')) {
+		$link = mysql_connect($mysql_host, $mysql_user, $mysql_password);
+
+		if (!$link = mysql_connect($mysql_host, $mysql_user, $mysql_password)) {
 			echo 'Keine Verbindung zu mysql';
 			exit;
 		}
 
-		if (!mysql_select_db('mysql_dbname', $link)) {
+		if (!mysql_select_db($mysql_dbname, $link)) {
 			echo 'Konnte Schema nicht selektieren';
 			exit;
 		}
